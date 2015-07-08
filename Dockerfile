@@ -1,8 +1,5 @@
 FROM golang:1.4
 
-# netcat is needed by wait_for_db.sh
-RUN apt-get update && apt-get install -y netcat
-
 RUN go get -v \
   github.com/golang/lint/golint \
   golang.org/x/tools/cmd/godoc \
