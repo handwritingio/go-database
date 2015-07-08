@@ -2,7 +2,7 @@ build:
 	docker-compose build
 
 test:
-	docker-compose run --rm lib sh -c "go run cmd/wait_for_db/main.go && go test ./..."
+	docker-compose run --rm lib sh -c 'waiter $$TEST_DATABASE_URL && go test ./...'
 
 vet:
 	docker-compose run --rm lib go vet ./...
