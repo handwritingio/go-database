@@ -1,0 +1,13 @@
+lib:
+  build: .
+  volumes:
+    - .:/go/src/github.com/graciouseloise/go-database
+  links:
+    - db
+  environment:
+    TEST_DATABASE_URL: postgres://postgres:postgres@db/postgres?sslmode=disable
+
+db:
+  image: postgres:9.3
+  ports:
+    - 5432
