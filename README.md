@@ -42,3 +42,8 @@ directly to your DB via psql (e.g. `psql mydb < sql/012_drop_foo.sql`)
 
 Skipping migration numbers or defining the same version more than once
 are both treated as fatal errors to the migration script.
+
+
+## Code Status
+
+[![Circle CI](https://circleci.com/gh/graciouseloise/go-database.svg?style=svg)](https://circleci.com/gh/graciouseloise/go-database)

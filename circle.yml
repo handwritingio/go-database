@@ -1,0 +1,16 @@
+machine:
+  services:
+    - postgresql
+  environment:
+    TEST_DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+
+dependencies:
+  pre:
+    - go get golang.org/x/tools/cmd/vet
+  override:
+    - go get -t -d -v ./...
+
+test:
+  override:
+    - go vet -x ./...
+    - go test -v ./... -race
