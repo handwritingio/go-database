@@ -3,6 +3,14 @@ machine:
     - postgresql
   environment:
     TEST_DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+  post:
+    # Because our internal imports are absolute (they include github.com), and
+    # CircleCI doesn't place our code on the GOPATH correctly, we need to put it
+    # there ourselves. If we didn't do this, `go get` would pull the code from
+    # our master branch and use that in our tests, which isn't what we want!
+    - rm -rvf ~/.go_workspace/src/github.com/graciouseloise/go-database
+    - mkdir -p ~/.go_workspace/src/github.com/graciouseloise/go-database
+    - cp -rv go-database/!(.git) ~/.go_workspace/src/github.com/graciouseloise/go-database/
 
 dependencies:
   pre:
