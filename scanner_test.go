@@ -10,11 +10,11 @@ type Model struct {
 	Name string
 }
 
-func (m *Model) scan(s Scannable) error {
+func (m *Model) scan(s Scanner) error {
 	return s.Scan(&m.ID, &m.Name)
 }
 
-func ExampleScannable() {
+func ExampleScanner() {
 	err := GetTestDB().Transaction(func(tx *Tx) error {
 		q := `CREATE TABLE models (id integer, name text)`
 		_, err := tx.Exec(q)

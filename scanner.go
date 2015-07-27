@@ -1,7 +1,7 @@
 package database
 
-// Scannable is a stand-in for sql.Row or sql.Rows. It allows for writing model
+// Scanner is a stand-in for sql.Row or sql.Rows. It allows for writing model
 // methods that handle the call to Scan to populate the struct.
-type Scannable interface {
+type Scanner interface {
 	Scan(dest ...interface{}) error
 }
