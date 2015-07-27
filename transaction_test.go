@@ -5,9 +5,7 @@ import (
 	"fmt"
 )
 
-func ExampleTransaction() {
-	fmt.Print("\n")
-
+func ExampleDB_Transaction() {
 	err := GetTestDB().Transaction(func(tx *Tx) error {
 		q := `CREATE TABLE bogus_transaction_test (id integer)`
 		_, err := tx.Exec(q)
@@ -52,9 +50,7 @@ func ExampleTransaction() {
 	// pq: relation "bogus_transaction_test" does not exist
 }
 
-func ExampleDestructiveOperationRollback() {
-	fmt.Print("\n")
-
+func ExampleDB_Transaction_destructiveOperationRollback() {
 	// Create table with one value
 	err := GetTestDB().Transaction(func(tx *Tx) error {
 		q := `CREATE TABLE bogus_transaction_test (id integer)`
