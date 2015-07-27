@@ -2,6 +2,8 @@ lib:
   build: .
   volumes:
     - .:/go/src/github.com/graciouseloise/go-database
+  ports:
+    - "9000:9000" # for godoc
   links:
     - db
   environment:

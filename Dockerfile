@@ -12,5 +12,8 @@ WORKDIR $SRC_PATH
 
 ADD . $SRC_PATH
 
+# for godoc
+EXPOSE 9000
+
 RUN go get -v -d ./...
 RUN go install -v ./...
