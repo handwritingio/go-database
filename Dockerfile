@@ -1,4 +1,4 @@
-FROM golang:1.4
+FROM golang:1.5
 
 RUN go get -v \
   github.com/golang/lint/golint \
