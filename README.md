@@ -3,7 +3,7 @@
 Provides a wrapper around the go postgres database driver to add migration
 management, connection persistence, and transaction composition.
 
-This was extracted from `graciouseloise/api`.
+This was extracted from `handwritingio/api`.
 
 
 ## Configuration
@@ -46,4 +46,4 @@ are both treated as fatal errors to the migration script.
 
 ## Code Status
 
-[![Circle CI](https://circleci.com/gh/graciouseloise/go-database.svg?style=svg)](https://circleci.com/gh/graciouseloise/go-database)
+[![Circle CI](https://circleci.com/gh/handwritingio/go-database.svg?style=svg)](https://circleci.com/gh/handwritingio/go-database)
